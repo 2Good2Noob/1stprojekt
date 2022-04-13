@@ -15,6 +15,10 @@
       "navbar": [
         "dist/navbar/navbar",
         "dist/navbar"
+      ],
+      "task": [
+        "dist/task/task",
+        "dist/task"
       ]
     },
     "declaration": false,
