@@ -5,6 +5,7 @@ import { NavbarComponentModule } from 'projects/navbar/src/lib/adapters/primary/
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { TooltipModule } from 'ngx-bootstrap/tooltip';
 
 @NgModule({
   declarations: [AppComponent],
@@ -13,6 +14,7 @@ import { AppComponent } from './app.component';
     AppRoutingModule,
     NavbarComponentModule,
     RouterModule,
+    TooltipModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
