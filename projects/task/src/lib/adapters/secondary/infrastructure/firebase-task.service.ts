@@ -22,6 +22,6 @@ export class FirebaseTaskService
   }
 
   add(task: Partial<TaskDTO>): void {
-    this._client.collection('tasks').add(task);
+    this._client.collection('task-list').add(task);
   }
 }
