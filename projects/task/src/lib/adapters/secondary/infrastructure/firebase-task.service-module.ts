@@ -5,6 +5,9 @@ import { GETS_ALL_TASK_DTO } from '../../../application/ports/secondary/gets-all
 
 import { ADDS_TASK_DTO } from '../../../application/ports/secondary/adds-task.dto-port';
 import { AddsTaskDtoPort } from '../../../application/ports/secondary/adds-task.dto-port';
+import { REMOVES_TASK_DTO } from '../../../application/ports/secondary/removes-task.dto-port';
+
+import { SETS_TASK_DTO } from '../../../application/ports/secondary/sets-task.dto-port';
 
 @NgModule({
   imports: [AngularFirestoreModule],
@@ -13,6 +16,8 @@ import { AddsTaskDtoPort } from '../../../application/ports/secondary/adds-task.
     FirebaseTaskService,
     { provide: GETS_ALL_TASK_DTO, useExisting: FirebaseTaskService },
     { provide: ADDS_TASK_DTO, useExisting: FirebaseTaskService },
+    { provide: REMOVES_TASK_DTO, useExisting: FirebaseTaskService },
+    { provide: SETS_TASK_DTO, useExisting: FirebaseTaskService },
   ],
   exports: [],
 })
