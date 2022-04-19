@@ -1,6 +1,5 @@
 <ul>
-  <li *ngFor="let task of task$ | async">{{ task | json }}</li>
+  <li *ngFor="let task of task$ | async">
+    {{ task.zadanie }}
+  </li>
 </ul>
-<li *ngFor="let task of task$ | async">
-  {{ task.zadanie }}
-</li>
