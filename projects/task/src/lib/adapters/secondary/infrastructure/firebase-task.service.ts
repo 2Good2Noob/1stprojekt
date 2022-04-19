@@ -6,8 +6,12 @@ import { GetsAllTaskDtoPort } from '../../../application/ports/secondary/gets-al
 import { TaskDTO } from '../../../application/ports/secondary/task.dto';
 import { filterByCriterion } from '@lowgular/shared';
 
+import { AddsTaskDtoPort } from '../../../application/ports/secondary/adds-task.dto-port';
+
 @Injectable()
-export class FirebaseTaskService implements GetsAllTaskDtoPort {
+export class FirebaseTaskService
+  implements GetsAllTaskDtoPort, AddsTaskDtoPort
+{
   constructor(private _client: AngularFirestore) {}
 
   getAll(criterion: Partial<TaskDTO>): Observable<TaskDTO[]> {
@@ -15,5 +19,9 @@ export class FirebaseTaskService implements GetsAllTaskDtoPort {
       .collection<TaskDTO>('task-list')
       .valueChanges({ idField: 'id' })
       .pipe(map((data: TaskDTO[]) => filterByCriterion(data, criterion)));
+  }
+
+  add(task: Partial<TaskDTO>): void {
+    this._client.collection('tasks').add(task);
   }
 }
