@@ -6,6 +6,9 @@
     value=""
     aria-label="..."
     background="#990000"
+    [ngClass]="{ 'bg-success': task.isChecked === true }"
+    (click)="onSetClicked(task)"
+    [checked]="task.isChecked"
   />
   {{
     task.zadanie
@@ -25,8 +28,10 @@
       />
     </svg>
     <div class="dropdown-content">
-      <button type="button" routerLink="/home" class="btn btn-primary">
-        Delete
+      <button type="button" class="btn btn-primary">
+        <a class="dropdown-item" (click)="onTaskIdRemovetasked(task.id)"
+          >Delete</a
+        >
       </button>
     </div>
   </div>
