@@ -8,19 +8,22 @@ import { environment } from '../environments/environment';
 import { AngularFireModule } from '@angular/fire/compat';
 import { FirebaseTaskServiceModule } from 'projects/task/src/public-api';
 import { ReactiveFormsModule } from '@angular/forms';
+import { BsDropdownConfig, BsDropdownModule } from 'ngx-bootstrap/dropdown';
 
 @NgModule({
   declarations: [AppComponent],
   imports: [
     BrowserModule,
+
     AppRoutingModule,
     NavbarComponentModule,
+    BsDropdownModule,
     ReactiveFormsModule,
     TooltipModule,
     FirebaseTaskServiceModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
   ],
-  providers: [],
+  providers: [BsDropdownConfig],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
