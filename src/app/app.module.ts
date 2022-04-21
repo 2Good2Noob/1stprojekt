@@ -7,6 +7,7 @@ import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { environment } from '../environments/environment';
 import { AngularFireModule } from '@angular/fire/compat';
 import { FirebaseTaskServiceModule } from 'projects/task/src/public-api';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [AppComponent],
@@ -14,6 +15,7 @@ import { FirebaseTaskServiceModule } from 'projects/task/src/public-api';
     BrowserModule,
     AppRoutingModule,
     NavbarComponentModule,
+    ReactiveFormsModule,
     TooltipModule,
     FirebaseTaskServiceModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
