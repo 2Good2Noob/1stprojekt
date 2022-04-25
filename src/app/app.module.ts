@@ -9,11 +9,12 @@ import { AngularFireModule } from '@angular/fire/compat';
 import { FirebaseTaskServiceModule } from 'projects/task/src/public-api';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BsDropdownConfig, BsDropdownModule } from 'ngx-bootstrap/dropdown';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 @NgModule({
   declarations: [AppComponent],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
 
     AppRoutingModule,
     NavbarComponentModule,
